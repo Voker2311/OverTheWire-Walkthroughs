@@ -1,0 +1,201 @@
+OverTheWire Krypton
+
+Level 0 to Level 1:
+
+Welcome to Krypton! The first level is easy. The following string encodes the password using Base64:
+
+S1JZUFRPTklTR1JFQVQ=
+Use this password to log in to krypton.labs.overthewire.org with username krypton1 using SSH on port 2231. You can find the files for other levels in /krypton/
+
+root@LAPTOP-U5913CMD:/home/akshay# echo 'S1JZUFRPTklTR1JFQVQ=' | base64 -d
+KRYPTONISGREATroot@LAPTOP-U5913CMD:/home/akshay#
+
+
+Decoded String -> KRYPTONISGREAT
+
+This is the password for Level 1 :
+
+Level 1 to Level 2:
+
+The password for level 2 is in the file ‘krypton2’. It is ‘encrypted’ using a simple rotation. It is also in non-standard ciphertext format. When using alpha characters for cipher text it is normal to group the letters into 5 letter clusters, regardless of word boundaries. This helps obfuscate any patterns. This file has kept the plain text word boundaries and carried them to the cipher text. Enjoy!
+
+
+YRIRY GJB CNFFJBEQ EBGGRA
+
+This is a rot13 cipher and the decoded string looks like this:
+-> LEVEL TWO PASSWORD ROTTEN
+
+Password is ROTTEN
+
+Level 2 to Level3:
+
+Additional Information:
+
+The encrypt binary will look for the keyfile in your current working directory. Therefore, it might be best to create a working direcory in /tmp and in there a link to the keyfile. As the encrypt binary runs setuid krypton3, you also need to give krypton3 access to your working directory.
+
+krypton2@krypton:/$ cd /tmp
+krypton2@krypton:/tmp$ mkdir akki
+krypton2@krypton:/tmp$ cd akki
+krypton2@krypton:/tmp/akki$ ln -s /krypton/krypton2/keyfile.dat
+krypton2@krypton:/tmp/akki$ ls
+keyfile.dat
+krypton2@krypton:/tmp/akki$ /krypton/krypton2/encrypt /tmp/akki/keyfile.dat
+failed to create cipher file
+krypton2@krypton:/tmp/akki$ chmod 777 .
+krypton2@krypton:/tmp/akki$ /krypton/krypton2/encrypt /tmp/akki/keyfile.dat
+krypton2@krypton:/tmp/akki$ ls
+ciphertext  keyfile.dat
+krypton2@krypton:/tmp/akki$ cat ciphertext
+YZABCDEFGHIJKLMNOPQRSTUVWX
+
+krypton2@krypton:/tmp/akki$
+
+So the key is 12 and the decoded string looks like this:CAESARISEASY
+
+The password for level3 -> CAESARISEASY
+
+Level 3 to Level4:
+
+Well done. You’ve moved past an easy substitution cipher.
+
+The main weakness of a simple substitution cipher is repeated use of a simple key. In the previous exercise you were able to introduce arbitrary plaintext to expose the key. In this example, the cipher mechanism is not available to you, the attacker.
+
+However, you have been lucky. You have intercepted more than one message. The password to the next level is found in the file ‘krypton4’. You have also found 3 other files. (found1, found2, found3)
+
+You know the following important details:
+
+The message plaintexts are in English (*** very important) - They were produced from the same key (*** even better!)
+Enjoy.
+
+Its all about frequency analysis of english language where 'e' is used a lot of times.
+
+https://en.wikipedia.org/wiki/Frequency_analysis
+
+I got stuck with this challenge so I looked at this walkthrough for this level.
+
+https://medium.com/@KamranSaifullah/overthewire-krypton-cryptography-challenges-9001e839cd23
+
+He explained it very well in this walkthrough.
+
+Also this guy explained it with python program
+https://axcheron.github.io/writeups/otw/krypton/
+
+After analyzing the files I found the password to be:
+
+WELLDONETHELEVELFOURPASSWORDISBRUTE
+
+Password for level 4 is BRUTE
+
+Level 4 to Level 5:
+
+Vignere cipher is a very good technique and it is also easy to crack.
+
+If we use the key(K) ‘GOLD’, and P = PROCEED MEETING AS AGREED, then “add” P to K, we get C. When adding, if we exceed 25, then we roll to 0 (modulo 26).
+
+P P R O C E E D M E E T I N G A S A G R E E D\
+K G O L D G O L D G O L D G O L D G O L D G O\
+becomes:
+
+P 15 17 14 2 4 4 3 12 4 4 19 8 13 6 0 18 0 6 17 4 4 3\
+K 6 14 11 3 6 14 11 3 6 14 11 3 6 14 11 3 6 14 11 3 6 14\
+C 21 5 25 5 10 18 14 15 10 18 4 11 19 20 11 21 6 20 2 8 10 17\
+So, we get a ciphertext of:
+
+VFZFK SOPKS ELTUL VGUCH KR
+
+So we got a text that contains the key that was used to encrpyt and also the key length is of 6 digits.
+
+There's this website that can help you find the key with the following info.
+
+https://www.guballa.de/vigenere-solver
+
+The key that was used is "frekey".
+
+We can use the exact same key to find the original plaintext.
+
+You guys can refer this website-> https://www.dcode.fr/vigenere-cipher
+
+Vigenere  FREKEY
+(Alphabet (26) ABCDEFGHIJKLMNOPQRSTUVWXYZ)
+-> CLEAR TEXT
+Password for Level 5 -> CLEARTEXT
+
+krypton5@krypton:/krypton/krypton4$ id
+uid=8005(krypton5) gid=8005(krypton5) groups=8005(krypton5)
+krypton5@krypton:/krypton/krypton4$
+
+
+Level 5 to LeveL 6:
+
+Level Info
+FA can break a known key length as well. Lets try one last polyalphabetic cipher, but this time the key length is unknown.
+
+Enjoy.
+
+So I used the same website and the website was able to guess the key using trial and error combo.
+
+Clear text using key "keylength":
+So the key = "keylength"
+
+Same was found for the text file found2.
+
+So I decoded krpyton6 password using the key "keylength"
+
+BELOS Z -> RANDO M
+
+So the password for Level6 is RANDOM
+
+krypton6@krypton:~$ id
+uid=8006(krypton6) gid=8006(krypton6) groups=8006(krypton6)
+krypton6@krypton:~$
+
+Level 6 to Level7:
+
+I found this nice explanation about this level at this website:
+
+https://l3ouu4n9.github.io/blog/2018/08/27/Overthewire-Krypton/
+
+Its uses LFSR to decode the following.
+
+
+krypton6@krypton:/tmp/gg$ python -c "print 'A' * 200"
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+krypton6@krypton:/tmp/gg$ python -c "print 'A' * 200" > plaintext
+krypton6@krypton:/tmp/gg$ /krypton/krypton6/encrypt6 plaintext gg
+krypton6@krypton:/tmp/gg$ cat gg
+EICTDGYIYZKTHNSIRFXYCPFUEOCKRN
+EICTDGYIYZKTHNSIRFXYCPFUEOCKRN
+EICTDGYIYZKTHNSIRFXYCPFUEOCKRN
+EICTDGYIYZKTHNSIRFXYCPFUEOCKRN
+EICTDGYIYZKTHNSIRFXYCPFUEOCKRN
+EICTDGYIYZKTHNSIRFXYCPFUEOCKRN
+EICTDGYIYZKTHNSIRFXY
+
+
+The key is repeating after certain intervals.
+Now we can use this key to decode the following krypton7 password.
+-> PNUKLYLWRQKGKBE
+
+We can use the key and Cipher to decode
+
+Decoded string - > LFSRISNOTRANDOM
+
+krypton7@krypton:~$ id
+uid=8007(krypton7) gid=8007(krypton7) groups=8007(krypton7)
+krypton7@krypton:~$
+
+
+It was a very good machine to practice cryptography skills.
+
+Thank you for checking it out.
+
+
+
+
+
+
+
+
+
+
+
